@@ -1,0 +1,469 @@
+What is a loop?
+A loop is a control flow statement that is used to execute a block of code over and over again until the condition given in the loop is true.
+In simple words, a loop is a block of code that is executed over and over again until a condition is met. The condition is called a loop condition and it is given in the loop.
+
+Why do we use loops?
+
+The most common use of loops is to repeat a block of code a number of times.
+For example, you might want to print a message a number of times. You can use a loop to do this.
+
+what is a loop
+Loops are very useful while programming, it is one of the most used features of any programming language.
+
+for example, if we want to print "Hello, World!" 10 times then instead of writing printing code for 10 times we can use a loop and write the code once.
+
+for loop example
+Here is the code for printing "Hello, World!" 10 times.
+
+Example
+
+for (var i = 0; i < 10; i++) {
+  console.log("Hello, World!");
+}
+Plain text
+? Run the code Run Here
+Types of loops in javascript
+JavaScript has various different kinds of loops. Here is a list of them.
+
+for loop: Loop that repeats a block of code for a specified number of times
+for...in: Loop that repeats a block of code for each property of an object
+for...of: Loop that is used to loop through iterable like Array, String, etc
+while: A loop that repeats a block of code while a given condition is true
+do...while: This also execute a block of code until a given condition is true but it executes the block of code at least once
+For loop in JavaScript
+The for loop is one of the most used loop in JavaScript. It is used to repeat a block of code a specified number of times.
+
+Syntax - for loop
+The syntax for for loop is as follows:
+
+for ([initialization]; [condition]; [Iteration]) {
+  //code here
+}
+Plain text
+for loop includes 3 control parts:
+
+Initialization: Initialization is a part of for loop where we initialize the counter of for loop. It is the place where for loop starts. Example let i = 0
+Condition: The condition part is a statement that returns true or false, for example, i > 10. if the condition is true then the code block of the loop body is executed, if the condition is false then the loop breaks.
+Iteration: In this part, the counter of for loop is updated. Example i++, i--, i += 2, etc
+Let's see a for loop in action.
+
+Example
+
+for (var i = 0; i < 5; i++) {
+  let name = "John";
+  console.log("Hi " + name);
+}
+JavaScript
+Run Here
+Initialisation: i = 0 is initialising i to 0
+Condition: i < 5 is checking if 5 is greater than i
+Iteration: i++ is increasing initialization variable by 1 in each iteration
+Flow Diagram - How for loop works
+The flow diagram below shows the flow of for loop in JavaScript.
+
+
+for loop flow diagram
+From the above flow diagram, you can see in what order for loop executes the code. The order of execution is as follows:
+
+
+First for loop initializes the counter variable
+Then it compares the counter variable with the condition
+If the condition is true then it executes the code block of the loop body then update the counter variable and execution returns to step 2
+If the condition is false then it breaks the loop
+Example - Here is an example that loops through an array and prints each element.
+
+Example
+
+var arr = [1, 2, 3, 4, 5];
+for(var i = 0; i < arr.length; i++) {
+  console.log(arr[i]);
+}
+Plain text
+Run Here
+Using Initialization Variable for flexible output
+The initialization variable (i in the above example) gets updated in every iteration. We can use this variable in the loop body to get some interesting results.
+
+
+Suppose you want to print numbers from 1-10 or you want to find squares of every number from 1-10, in such cases the initialization variable is good to use.
+
+Example 1 - Printing 0-10
+
+Example
+
+for (var i = 1; i <= 10; i++) {
+  console.log(i);
+}
+JavaScript
+Run Here
+Example 2 - Finding squares of numbers from 1-10
+
+Example
+
+for (var i = 1; i <= 10; i++) {
+  console.log(i * i);
+}
+JavaScript
+Run Here
+
+nested for loop in javascript
+You can use for loop inside another for loop. This is called nested for loop.
+
+Nested loops are useful when you want to loop through a list of items and then do something with each item. For example, you want to loop through a list of numbers and perform a series of operations on each number.
+
+Nested loop example:
+
+Example
+
+for (var i = 0; i < 5; i++) {
+  for (var j = 0; j < 5; j++) {
+    console.log(i + " " + j);
+  }
+}
+JavaScript
+Run Here
+Another example to loop through an array of arrays.
+
+Example
+
+let arr = [[1, "one", 2, "two"], [3, "three", 4, "four"]];
+for (var i = 0; i < arr.length; i++) {
+  for (var j = 0; j < arr[i].length; j++) {
+    console.log(arr[i][j]);
+  }
+}
+JavaScript
+Run Here
+
+Ezoicreport this ad
+Now let us see some situations that you may think of or you may encounter while working with for loop. We will look at the following situations:
+
+When you do not initialize the counter variable
+When you leave your condition blank
+When you do not update the counter variable
+When you leave all blank (i.e. initialization, condition, and iteration)
+When you do not use curly braces
+Example 1 - Nested for loop with no initialization
+This is a situation where you do not initialize the counter variable. In this case, an error will be thrown if the variable is not initialized but used. The error message will be ReferenceError: i is not defined.
+
+So you may leave initialization blank but to use the variable in the loop body, you need to define it before the loop.
+
+
+Example
+
+var i = 0;
+for (; i < 5; i++) {
+  console.log(i);
+}
+JavaScript
+Run Here
+Example 2 - Nested for loop with no condition
+This is a situation where you do not give any condition in the for loop. In this case, the loop will execute forever and will never break.
+
+To break the loop, you need to give a condition in the loop body and break the loop when the condition is true.
+
+Example
+
+for (var i = 0; ; i++) {
+  console.log(i);
+  if(i == 5) {
+    break;
+  }
+}
+JavaScript
+Run Here
+Note: break statement is used to break the loop. We will see the break statement in detail in the coming section.
+
+Example 3 - Nested for loop with no iteration
+This is a situation where you do not give any iteration in the for loop. In this case, the loop will execute forever and will never break because the variable is not updated and remains the same.
+
+So you can update the initialized variable within the code block.
+
+Example
+
+for(var i = 0; i < 5; ) {
+  console.log(i);
+  i++;
+}
+JavaScript
+Run Here
+Example 4 - Nested for loop with no initialization, no condition, and no iteration
+This is a situation where you do not give any initialization, condition, and iteration in the for loop. In this case, the following things may happen:
+
+
+If any used variable is not defined, an error will be thrown.
+The loop must be given some condition to break otherwise it will execute forever.
+The condition inside the code block must come to a true state. Otherwise, the loop will execute forever.
+So you may leave all blank but to use the variable in the loop body, you need to define it before the loop.
+
+Example
+
+// defining a variable
+var i = 0;
+for (; ; ) {
+  console.log(i);
+  if(i == 5) { // condition
+    break;
+  }
+  // update the variable
+  i++;
+}
+JavaScript
+Run Here
+Example 5 - No curly braces
+When you have only one line of code in the for loop body, you can omit curly braces.
+
+But if you have more than one line of code, you need to use curly braces. The code inside curly braces is represented as a block.
+
+Example
+
+for (var i = 0; i < 5; i++)
+  console.log(i);
+JavaScript
+Run Here
+Let's take a brief look at for...in and for...of loop. We will see them in detail in the coming section.
+
+for...in loop
+The for...in loop is used to iterate over the properties of an object. It is also used to iterate over an array.
+
+We have not discussed the object yet but here we are taking a simple example: focus on loop here instead of object.
+
+Syntax - for...in
+The syntax of for...in loop is as follows:
+
+
+for (var propertyName in object) {
+  // do something
+}
+Plain text
+The propertyName is the name of the property of the object. The object is the object whose properties are to be iterated over.
+
+The in keyword is used to iterate over the properties of the object.
+
+Here is an example:
+
+Example
+
+var car = {
+  name: "ford",
+  color: "black",
+  model: "mustang" 
+}
+
+for (var prop in car) { // prop represent properties of car 
+  console.log(`${prop} = ${car[prop]}`);
+}
+JavaScript
+? Run the code Run Here
+for...of loop javascript
+The for...of loop is used to iterate over the elements of an array. It is also used to iterate over an iterable object like an array, strings, NodeList, arguments, etc.
+
+Syntax - for...of
+The syntax of for...of loop is as follows:
+
+for (var element of array) {
+  // do something
+}
+Plain text
+The element is the element of the array. The array is the array whose elements are to be iterated over.
+
+Here is an example:
+
+Example
+
+var fruits = ["Apple", "Banana", "Carrot", "Guava", "Orange"];
+for (var element of fruits) {
+  console.log(element);
+}
+JavaScript
+? Run the code Run Here
+
+looping through String using for...of loop
+
+Example
+
+var moto = "Learn Javascript";
+for (var char of moto) { // char is the element of moto
+  console.log(char);
+}
+JavaScript
+? Run the code Run Here
+for loop in javascript example
+Example 1: sum of numbers from 1 to 10
+
+Example
+
+var sum = 0;
+for (var i = 1; i <= 10; i++) {
+  sum += i;
+}
+console.log(sum);
+JavaScript
+Run Here
+
+Example 2: Even numbers from m to n
+
+Example
+
+var m = 10, n = 20;
+for (var i = m; i <= n; i++) {
+  if (i % 2 === 0) {
+    console.log(i);
+  }
+}
+JavaScript
+Run Here
+
+Example 3: prime numbers from 0 to n
+
+Example
+
+var n = 10;
+for (var i = 2; i <= n; i++) {
+  var isPrime = true;
+  for (var j = 2; j <= Math.sqrt(i); j++) { // nested loop
+    if (i % j === 0) {
+      isPrime = false;
+      break;
+    }
+  }
+  if (isPrime) {
+    console.log(i);
+  }
+}
+JavaScript
+Run Here
+Conclusion
+The loop in javascript is used to iterate over the elements of an array, an iterable object like array, strings, NodeList, arguments, etc.
+
+The most commonly used loop in javascript is for loop.
+
+
+Different Types of Loops in JavaScript
+Loops are used to execute the same block of code again and again, as long as a certain condition is met. The basic idea behind a loop is to automate the repetitive tasks within a program to save the time and effort. JavaScript now supports five different types of loops:
+
+while - loops through a block of code as long as the condition specified evaluates to true.
+do.while - loops through a block of code once; then the condition is evaluated. If the condition is true, the statement is repeated as long as the specified condition is true.
+for - loops through a block of code until the counter reaches a specified number.
+for.in - loops through the properties of an object.
+for.of - loops over iterable objects such as arrays, strings, etc.
+In the following sections, we will discuss each of these loop statements in detail.
+
+The while Loop
+This is the simplest looping statement provided by JavaScript.
+
+The while loop loops through a block of code as long as the specified condition evaluates to true. As soon as the condition fails, the loop is stopped. The generic syntax of the while loop is:
+
+while(condition) {
+    // Code to be executed
+}
+The following example defines a loop that will continue to run as long as the variable i is less than or equal to 5. The variable i will increase by 1 each time the loop runs:
+
+ExampleTry this code ¯
+var i = 1;
+while(i <= 5) {    
+    document.write("<p>The number is " + i + "</p>");
+    i++;
+}
+Note: Make sure that the condition specified in your loop eventually goes false. Otherwise, the loop will never stop iterating which is known as infinite loop. A common mistake is to forget to increment the counter variable (variable i in our case).
+
+The do...while Loop
+The do-while loop is a variant of the while loop, which evaluates the condition at the end of each loop iteration. With a do-while loop the block of code executed once, and then the condition is evaluated, if the condition is true, the statement is repeated as long as the specified condition evaluated to is true. The generic syntax of the do-while loop is:
+
+do {
+    // Code to be executed
+}
+while(condition);
+The JavaScript code in the following example defines a loop that starts with i=1. It will then print the output and increase the value of variable i by 1. After that the condition is evaluated, and the loop will continue to run as long as the variable i is less than, or equal to 5.
+
+ExampleTry this code ¯
+var i = 1;
+do {
+    document.write("<p>The number is " + i + "</p>");
+    i++;
+}
+while(i <= 5);
+Difference Between while and do...while Loop
+The while loop differs from the do-while loop in one important way - with a while loop, the condition to be evaluated is tested at the beginning of each loop iteration, so if the conditional expression evaluates to false, the loop will never be executed.
+
+With a do-while loop, on the other hand, the loop will always be executed once even if the conditional expression evaluates to false, because unlike the while loop, the condition is evaluated at the end of the loop iteration rather than the beginning.
+
+The for Loop
+The for loop repeats a block of code as long as a certain condition is met. It is typically used to execute a block of code for certain number of times. Its syntax is:
+
+for(initialization; condition; increment) {
+    // Code to be executed
+}
+The parameters of the for loop statement have following meanings:
+
+initialization - it is used to initialize the counter variables, and evaluated once unconditionally before the first execution of the body of the loop.
+condition - it is evaluated at the beginning of each iteration. If it evaluates to true, the loop statements execute. If it evaluates to false, the execution of the loop ends.
+increment - it updates the loop counter with a new value each time the loop runs.
+The following example defines a loop that starts with i=1. The loop will continued until the value of variable i is less than or equal to 5. The variable i will increase by 1 each time the loop runs:
+
+ExampleTry this code ¯
+for(var i=1; i<=5; i++) {
+    document.write("<p>The number is " + i + "</p>");
+}
+The for loop is particularly useful for iterating over an array. The following example will show you how to print each item or element of the JavaScript array.
+
+ExampleTry this code ¯
+// An array with some elements
+var fruits = ["Apple", "Banana", "Mango", "Orange", "Papaya"];
+ 
+// Loop through all the elements in the array 
+for(var i=0; i<fruits.length; i++) {
+    document.write("<p>" + fruits[i] + "</p>");
+}
+The for...in Loop
+The for-in loop is a special type of a loop that iterates over the properties of an object, or the elements of an array. The generic syntax of the for-in loop is:
+
+for(variable in object) {
+    // Code to be executed
+}
+The loop counter i.e. variable in the for-in loop is a string, not a number. It contains the name of current property or the index of the current array element.
+
+The following example will show you how to loop through all properties of a JavaScript object.
+
+ExampleTry this code ¯
+// An object with some properties 
+var person = {"name": "Clark", "surname": "Kent", "age": "36"};
+ 
+// Loop through all the properties in the object  
+for(var prop in person) {  
+    document.write("<p>" + prop + " = " + person[prop] + "</p>"); 
+}
+Similarly, you can loop through the elements of an array, like this:
+
+ExampleTry this code ¯
+// An array with some elements
+var fruits = ["Apple", "Banana", "Mango", "Orange", "Papaya"];
+ 
+// Loop through all the elements in the array 
+for(var i in fruits) {  
+    document.write("<p>" + fruits[i] + "</p>");
+}
+Note: The for-in loop should not be used to iterate over an array where the index order is important. You should better use a for loop with a numeric index.
+
+The for...of Loop ES6
+ES6 introduces a new for-of loop which allows us to iterate over arrays or other iterable objects (e.g. strings) very easily. Also, the code inside the loop is executed for each element of the iterable object.
+
+The following example will show you how to loop through arrays and strings using this loop.
+
+ExampleTry this code ¯
+// Iterating over array
+let letters = ["a", "b", "c", "d", "e", "f"];
+
+for(let letter of letters) {
+    console.log(letter); // a,b,c,d,e,f
+}
+
+// Iterating over string
+let greet = "Hello World!";
+
+for(let character of greet) {
+    console.log(character); // H,e,l,l,o, ,W,o,r,l,d,!
+}
+To learn about other ES6 features, please check out the JavaScript ES6 features chapter.
+
+ 
+Note: The for...of loop doesn't work with objects because they are not iterable. If you want to iterate over the properties of an object you can use the for-in loop.
